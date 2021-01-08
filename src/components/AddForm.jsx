@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class AddForm extends Component {
+class AddForm extends PureComponent {
     
     /*
         DOM 요소를 직접적으로 사용하지 않아서 Refs 를 사용한다.
