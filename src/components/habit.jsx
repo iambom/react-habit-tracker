@@ -1,31 +1,21 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Habit extends Component {
-    // state = {
-    //     count: 0,
-    // }
+class Habit extends PureComponent {
 
-    // handleIncrement = () => {
-    //     // state object 안에 있는  count를 증가 시킨 뒤 state를 업데이트 해야 함.
-    //     this.setState({count: this.state.count + 1});
-    // }
-    // handleDecrement = () => {
-    //     const count = this.state.count - 1;
-    //     this.setState({count: count < 0 ? 0 : count});
-    // }
-    // handleDelete = () => {
-    //     const count = this.state.count - 1;
-    //     this.setState({count: count < 0 ? 0 : count});
-    // }
+    componentDidMount() {
+        // component 가 UI에 등록이 되었을 때 사용자에게 보여질 때 호출
+        // e.g) component 가 보여지기 전 loading spinner를 보여야 할 때나 타이머 시작, 실시간 채팅에서 소켓 등 초기화 할 때 
+        console.log(`habit: ${this.props.habit.name} mounted`);
+    }
 
-    // Habits component 에서 콜백함수 관리
+    componentWillUnmount() {
+        // 지우기 전에 호출 (UI 상에서 없어질 때)
+        // e.g) 타이머 중지, 실시간 채팅에서 정리, 리소스 지우기 등 
+        console.log(`habit: ${this.props.habit.name} will unmount`);
 
-    /*
-        props 으로 전달된 콜백함수를 호출하고 전달받은 각각의 데이터를 다시 인자로 전달해준다. 
-    */
-
-   handleIncrement = () => {
-    this.props.onIncrement(this.props.habit);
+    }
+    handleIncrement = () => {
+        this.props.onIncrement(this.props.habit);
     }
     handleDecrement = () => {
         this.props.onDecrement(this.props.habit);
