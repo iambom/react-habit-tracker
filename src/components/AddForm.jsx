@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 /*
-    Memo는 함수형 컴포넌트의 PureComponent
+    Memo는 함수형 컴포넌트의 PdureComponent
     memo 함수 안에 function component를 전달해준다
     props가 변경 되지 않으면 함수가 호출되지 않는다 
 

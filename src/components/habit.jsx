@@ -24,6 +24,7 @@ class Habit extends PureComponent {
         this.props.onDelete(this.props.habit);
     }
     render(){
+        
         console.log(this.props.habit)
         const { name, count } = this.props.habit;
         return (
